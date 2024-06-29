@@ -1,6 +1,23 @@
+"use client";
 import Image from "next/image";
-
+import { hc } from "hono/client";
+import { AppType } from "@/server/app";
+import { useEffect } from "react";
 export default function Home() {
+  const client = hc<AppType>("http://localhost:3000/api");
+  useEffect(() => {
+    (async () => {
+      const res = await client.hello.$get({
+        query: {
+          name: "sr",
+        },
+      });
+      if (res.ok) {
+        const data = await res.json();
+        console.log(data.message);
+      }
+    })();
+  }, []);
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
