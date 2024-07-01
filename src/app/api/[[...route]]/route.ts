@@ -2,7 +2,7 @@ import { Hono } from "hono";
 import { handle } from "hono/vercel";
 import { zValidator } from "@hono/zod-validator";
 import { z } from "zod";
-import prisma from "@/server/db";
+import prisma from "@/utility/db";
 import app from "@/server/app";
 export const dynamic = "force-dynamic";
 // const app = new Hono().basePath('/api')

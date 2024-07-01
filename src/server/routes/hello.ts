@@ -6,8 +6,6 @@ const hello = new Hono().get(
   "/",
   zValidator("query", z.object({ name: z.string() })),
   (c) => {
-    console.log(c.req.query("name"));
-
     return c.json({
       message: `Hell`,
     });
