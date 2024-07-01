@@ -1,8 +1,27 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+> Please note this Boilerplate is not 100% perfect, it is just to get your project started.
+
+# not finished yet
+
+# Why
+
+I only want to make a website in 1 port, I know this is a bad idea but i like it
+
+- nextjs
+- hono
+- next-intl
+- including authentication not use any library
 
 ## Getting Started
 
-First, run the development server:
+rename `.env.example` to `.env` or create `.env` in root file
+
+```bash
+DATABASE_URL="postgresql://root:root@localhost:5432/mydatabase?schema=public" # yours databse url,  if you don't want to use postgresql please prisma Documentation
+NEXT_PUBLIC_API_BASE_URL=http://localhost:3000 # nase url
+TOKEN_JWT=secret # secret key for jwt
+```
+
+and run
 
 ```bash
 npm run dev
@@ -18,19 +37,31 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+└── 📁honoNext
+    └── 📁messages  # i18n
+    └── 📁prisma # prisma
+    └── 📁public
+    └── 📁src
+        └── 📁app # main page
+            └── 📁login # login page
+        └── 📁server # for server
+            └── 📁routes # route for hono/backend
+        └── 📁utility # all function or utility
+    └── tailwind.config.ts
+    └── tsconfig.json
+```
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+To learn more about Next.js, hono.js, prisma , take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [hono.js Documentation](https://hono.dev/docs/) - for backend
+- [prisma Documentation](https://www.prisma.io/docs) - orm
+- [next-intl Documentation](next-intl-docs.vercel.app) - for i18n (cookis base, cek in file i18n.ts)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## having problems?
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+just open issues or contact me
