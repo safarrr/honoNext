@@ -73,5 +73,19 @@ export async function login(prevState: any, formData: FormData) {
       password: [],
     },
   };
-  // Mutate data
+}
+
+export async function changeLanguageAction(lang: string) {
+  let langs = "en";
+  if (lang == "id") {
+    langs = "id";
+  } else {
+    langs = "en";
+  }
+  cookies().set({
+    name: "LOCALE",
+    value: langs,
+    httpOnly: true,
+    secure: true,
+  });
 }

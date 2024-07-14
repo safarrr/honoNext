@@ -5,9 +5,11 @@ export default getRequestConfig(async () => {
   // Provide a static locale, fetch a user setting,
   // read from `cookies()`, `headers()`, etc.
   const cookieStore = cookies();
-  const cookieLocale = cookieStore.get("NEXT_LOCALE") as any;
+  const cookieLocale = cookieStore.get("LOCALE") as any;
   let locale: Locale = "en";
+
   if (
+    cookieLocale &&
     cookieLocale.value &&
     (cookieLocale.value === "en" || cookieLocale.value === "id")
   ) {
